@@ -28,7 +28,7 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle21 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             txtIdentificacionBuscar = new TextBox();
             btnBuscar = new Button();
@@ -59,6 +59,7 @@
             label1.Size = new Size(296, 55);
             label1.TabIndex = 0;
             label1.Text = "Totales por Cliente";
+            label1.Click += label1_Click;
             // 
             // txtIdentificacionBuscar
             // 
@@ -201,8 +202,8 @@
             // Monto
             // 
             Monto.DataPropertyName = "Monto";
-            dataGridViewCellStyle21.Format = "N2";
-            Monto.DefaultCellStyle = dataGridViewCellStyle21;
+            dataGridViewCellStyle2.Format = "N2";
+            Monto.DefaultCellStyle = dataGridViewCellStyle2;
             Monto.HeaderText = "Monto";
             Monto.MinimumWidth = 6;
             Monto.Name = "Monto";
