@@ -64,5 +64,10 @@ namespace SistemaPagos.Fronted
         {
 
         }
+
+        private void txtConfirmarContrasena_TextChanged(object sender, EventArgs e)
+        {
+
+        }
     }
 }

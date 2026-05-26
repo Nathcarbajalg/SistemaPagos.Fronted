@@ -152,7 +152,7 @@
             txtConfirmarContrasena.PlaceholderText = "Confirma tu contraseña";
             txtConfirmarContrasena.Size = new Size(179, 27);
             txtConfirmarContrasena.TabIndex = 6;
-            txtConfirmarContrasena.UseSystemPasswordChar = true;
+            txtConfirmarContrasena.TextChanged += txtConfirmarContrasena_TextChanged;
             // 
             // button1
             // 
