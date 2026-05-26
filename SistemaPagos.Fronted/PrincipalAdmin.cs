@@ -14,7 +14,10 @@ namespace SistemaPagos.Fronted
         {
             InitializeComponent();
         }
-
+        public PrincipalAdmin(string nombre, DateTime expiracion) : this()
+        {
+            // Inicialización adicional si la necesitas, por ahora vacío
+        }
         private void label1_Click(object sender, EventArgs e)
         {
 

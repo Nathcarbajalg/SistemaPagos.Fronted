@@ -137,7 +137,7 @@
             groupBox1.TabIndex = 9;
             groupBox1.TabStop = false;
             groupBox1.Text = "Historial de Pagos del Cliente";
-            groupBox1.Enter += this.groupBox1_Enter;
+            //groupBox1.Enter += this.groupBox1_Enter;
             // 
             // dgvHistorialCliente
             // 

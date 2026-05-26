@@ -1,3 +1,4 @@
+using SistemaPagos.Fronted.Models;
 using System.Drawing;
 namespace SistemaPagos.Fronted
 {
@@ -53,41 +54,46 @@ namespace SistemaPagos.Fronted
         {
 
         }
-        private void btnIngresar_Click(object sender, EventArgs e)
+        private void AbrirPrincipal(string rol, string nombre, DateTime expiracion)
         {
-            // Validar que los campos no estén vacíos
-            if (string.IsNullOrWhiteSpace(txtIdentificacion.Text))
+            if (rol == "Admin")
             {
-                MessageBox.Show("Ingrese su número de identificación.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtIdentificacion.Focus();
-                return;
-            }
-
-            if (string.IsNullOrWhiteSpace(txtContrasena.Text))
-            {
-                MessageBox.Show("Ingrese su contraseña.", "Validación", MessageBoxButtons.OK, MessageBoxIcon.Warning);
-                txtContrasena.Focus();
-                return;
-            }
-
-            // Por ahora, simulamos un login exitoso (sin llamar a la API)
-            // En la versión final, aquí iría la llamada a /api/auth/login
-
-            // Simulación: si la identificación es "admin" y contraseña "123", entra como admin; si no, como usuario normal
-            if (txtIdentificacion.Text == "admin" && txtContrasena.Text == "123")
-            {
-                // Abrir pantalla de administrador
-                PrincipalAdmin frmAdmin = new PrincipalAdmin();
-                frmAdmin.Show();
-                this.Hide(); // ocultar el login
+                PrincipalAdmin admin = new PrincipalAdmin(nombre, expiracion);
+                admin.Show();
             }
             else
             {
-                // Abrir pantalla de usuario normal
-                PrincipalUsuario frmUser = new PrincipalUsuario();
-                frmUser.Show();
-                this.Hide();
+                PrincipalUsuario user = new PrincipalUsuario(nombre, expiracion);
+                user.Show();
             }
+            this.Hide();
+        }
+        private void btnIngresar_Click(object sender, EventArgs e)
+        {
+            string identificacion = txtIdentificacion.Text.Trim();
+            string contrasena = txtContrasena.Text;
+
+            if (string.IsNullOrEmpty(identificacion) || string.IsNullOrEmpty(contrasena))
+            {
+                MessageBox.Show("Complete todos los campos.");
+                return;
+            }
+
+            using (var context = new AppDbContext())
+            {
+                var usuario = context.Usuarios.FirstOrDefault(u => u.Identificacion == identificacion);
+                if (usuario == null || usuario.Contrasena != contrasena)
+                {
+                    MessageBox.Show("Identificación o contraseña incorrectos.");
+                    return;
+                }
+
+                // Login exitoso
+                DateTime expiracion = DateTime.Now.AddHours(1);
+                SesionHelper.GuardarSesion(usuario.Identificacion, usuario.Rol, $"{usuario.Nombre} {usuario.Apellido}", expiracion);
+                AbrirPrincipal(usuario.Rol, $"{usuario.Nombre} {usuario.Apellido}", expiracion);
+            }
+
         }
 
         private void llOlvideContrasena_LinkClicked(object sender, EventArgs e)

@@ -14,7 +14,10 @@ namespace SistemaPagos.Fronted
         {
             InitializeComponent();
         }
-
+        public PrincipalUsuario(string nombre, DateTime expiracion) : this()
+        {
+            // vacío por ahora
+        }
         private void PrincipalUsuario_Load(object sender, EventArgs e)
         {
 
