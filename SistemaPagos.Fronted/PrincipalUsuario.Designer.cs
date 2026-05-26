@@ -29,6 +29,7 @@
         private void InitializeComponent()
         {
             components = new System.ComponentModel.Container();
+            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
             lblBienvenida = new Label();
             lblTiempoRestante = new Label();
             groupBox1 = new GroupBox();
@@ -50,9 +51,11 @@
             // lblBienvenida
             // 
             lblBienvenida.AutoSize = true;
+            lblBienvenida.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblBienvenida.ForeColor = Color.FromArgb(192, 0, 192);
             lblBienvenida.Location = new Point(27, 9);
             lblBienvenida.Name = "lblBienvenida";
-            lblBienvenida.Size = new Size(166, 20);
+            lblBienvenida.Size = new Size(222, 20);
             lblBienvenida.TabIndex = 0;
             lblBienvenida.Text = " \"Bienvenido, [Usuario]\"";
             lblBienvenida.Click += label1_Click;
@@ -60,9 +63,11 @@
             // lblTiempoRestante
             // 
             lblTiempoRestante.AutoSize = true;
+            lblTiempoRestante.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTiempoRestante.ForeColor = Color.FromArgb(192, 0, 192);
             lblTiempoRestante.Location = new Point(543, 9);
             lblTiempoRestante.Name = "lblTiempoRestante";
-            lblTiempoRestante.Size = new Size(172, 20);
+            lblTiempoRestante.Size = new Size(219, 20);
             lblTiempoRestante.TabIndex = 3;
             lblTiempoRestante.Text = "Sesión válida por: --:--:--";
             lblTiempoRestante.Click += lblTiempoRestante_Click;
@@ -72,6 +77,8 @@
             groupBox1.Controls.Add(btnRealizarPago);
             groupBox1.Controls.Add(txtMonto);
             groupBox1.Controls.Add(txtDescripcion);
+            groupBox1.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            groupBox1.ForeColor = Color.Fuchsia;
             groupBox1.Location = new Point(27, 47);
             groupBox1.Name = "groupBox1";
             groupBox1.Size = new Size(384, 153);
@@ -81,7 +88,8 @@
             // 
             // btnRealizarPago
             // 
-            btnRealizarPago.BackColor = Color.Orange;
+            btnRealizarPago.BackColor = Color.Fuchsia;
+            btnRealizarPago.ForeColor = Color.White;
             btnRealizarPago.Location = new Point(236, 108);
             btnRealizarPago.Name = "btnRealizarPago";
             btnRealizarPago.Size = new Size(129, 29);
@@ -95,7 +103,7 @@
             txtMonto.Location = new Point(187, 38);
             txtMonto.Name = "txtMonto";
             txtMonto.PlaceholderText = "Monto";
-            txtMonto.Size = new Size(125, 27);
+            txtMonto.Size = new Size(125, 28);
             txtMonto.TabIndex = 1;
             txtMonto.TextChanged += txtMonto_TextChanged;
             // 
@@ -104,12 +112,21 @@
             txtDescripcion.Location = new Point(6, 37);
             txtDescripcion.Name = "txtDescripcion";
             txtDescripcion.PlaceholderText = "Descripción del Pago";
-            txtDescripcion.Size = new Size(160, 27);
+            txtDescripcion.Size = new Size(160, 28);
             txtDescripcion.TabIndex = 0;
             // 
             // dgvHistorial
             // 
             dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvHistorial.BackgroundColor = Color.White;
+            dataGridViewCellStyle1.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle1.BackColor = SystemColors.Control;
+            dataGridViewCellStyle1.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle1.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle1.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle1.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle1.WrapMode = DataGridViewTriState.True;
+            dgvHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle1;
             dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHistorial.Columns.AddRange(new DataGridViewColumn[] { Fecha, Monto, Descripción });
             dgvHistorial.Location = new Point(12, 254);
@@ -140,21 +157,26 @@
             // lblTotalGeneral
             // 
             lblTotalGeneral.AutoSize = true;
+            lblTotalGeneral.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalGeneral.ForeColor = Color.FromArgb(192, 0, 192);
             lblTotalGeneral.Location = new Point(437, 57);
             lblTotalGeneral.Name = "lblTotalGeneral";
-            lblTotalGeneral.Size = new Size(115, 20);
+            lblTotalGeneral.Size = new Size(156, 20);
             lblTotalGeneral.TabIndex = 8;
             lblTotalGeneral.Text = "Total General: Q";
             lblTotalGeneral.Click += label3_Click;
             // 
             // btnCerrarSesion
             // 
+            btnCerrarSesion.BackColor = Color.Fuchsia;
+            btnCerrarSesion.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnCerrarSesion.ForeColor = Color.White;
             btnCerrarSesion.Location = new Point(611, 394);
             btnCerrarSesion.Name = "btnCerrarSesion";
             btnCerrarSesion.Size = new Size(151, 29);
             btnCerrarSesion.TabIndex = 9;
             btnCerrarSesion.Text = "Cerrar Sesión";
-            btnCerrarSesion.UseVisualStyleBackColor = true;
+            btnCerrarSesion.UseVisualStyleBackColor = false;
             btnCerrarSesion.Click += button1_Click_1;
             // 
             // timerSesion
@@ -165,16 +187,19 @@
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.FromArgb(192, 0, 192);
             label2.Location = new Point(12, 222);
             label2.Name = "label2";
-            label2.Size = new Size(174, 20);
+            label2.Size = new Size(200, 20);
             label2.TabIndex = 3;
-            label2.Text = "MI HISTORIAL DE PAGOS";
+            label2.Text = "Mi Historial de Pagos";
             // 
             // PrincipalUsuario
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Linen;
             ClientSize = new Size(800, 450);
             Controls.Add(label2);
             Controls.Add(btnCerrarSesion);
