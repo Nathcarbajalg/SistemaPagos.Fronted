@@ -59,9 +59,11 @@
             // label1
             // 
             label1.AutoSize = true;
-            label1.Location = new Point(509, 9);
+            label1.Font = new Font("Gabriola", 22.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Fuchsia;
+            label1.Location = new Point(397, -9);
             label1.Name = "label1";
-            label1.Size = new Size(141, 20);
+            label1.Size = new Size(282, 68);
             label1.TabIndex = 0;
             label1.Text = "SISTEMA DE PAGOS";
             label1.Click += label1_Click;
