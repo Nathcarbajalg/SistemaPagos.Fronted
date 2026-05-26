@@ -37,6 +37,7 @@
             llOlvideContrasena = new LinkLabel();
             label4 = new Label();
             llCrearUsuario = new LinkLabel();
+            btnVerContrasena = new Button();
             SuspendLayout();
             // 
             // label1
@@ -84,6 +85,7 @@
             txtContrasena.Name = "txtContrasena";
             txtContrasena.Size = new Size(171, 27);
             txtContrasena.TabIndex = 4;
+            txtContrasena.UseSystemPasswordChar = true;
             txtContrasena.TextChanged += txtContrasena_TextChanged;
             // 
             // btnIngresar
@@ -129,12 +131,24 @@
             llCrearUsuario.Text = "Crear mi Usuario";
             llCrearUsuario.LinkClicked += llCrearUsuario_LinkClicked;
             // 
+            // btnVerContrasena
+            // 
+            btnVerContrasena.FlatStyle = FlatStyle.Flat;
+            btnVerContrasena.Location = new Point(663, 183);
+            btnVerContrasena.Name = "btnVerContrasena";
+            btnVerContrasena.Size = new Size(42, 31);
+            btnVerContrasena.TabIndex = 9;
+            btnVerContrasena.Text = "👁️";
+            btnVerContrasena.UseVisualStyleBackColor = true;
+            btnVerContrasena.Click += btnVerContrasena_Click;
+            // 
             // Form1
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             BackColor = Color.FromArgb(192, 192, 255);
-            ClientSize = new Size(1184, 450);
+            ClientSize = new Size(1184, 459);
+            Controls.Add(btnVerContrasena);
             Controls.Add(llCrearUsuario);
             Controls.Add(label4);
             Controls.Add(llOlvideContrasena);
@@ -162,5 +176,6 @@
         private LinkLabel llOlvideContrasena;
         private Label label4;
         private LinkLabel llCrearUsuario;
+        private Button btnVerContrasena;
     }
 }

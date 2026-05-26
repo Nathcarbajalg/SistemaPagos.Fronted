@@ -116,5 +116,21 @@ namespace SistemaPagos.Fronted
         {
 
         }
+
+      
+private void btnVerContrasena_Click(object sender, EventArgs e)
+        {
+            // Cambiar el modo de caracteres de contraseña
+            if (txtContrasena.UseSystemPasswordChar)
+            {
+                txtContrasena.UseSystemPasswordChar = false;
+                btnVerContrasena.Text = "🙈"; // Ojo cerrado (ocultando)
+            }
+            else
+            {
+                txtContrasena.UseSystemPasswordChar = true;
+                btnVerContrasena.Text = "👁️"; // Ojo abierto (mostrando)
+            }
+        }
     }
-}
+    }
