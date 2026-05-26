@@ -69,5 +69,15 @@ namespace SistemaPagos.Fronted
         {
 
         }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+
+        }
+
+        private void txtConfirmarContrasena_TextChanged_1(object sender, EventArgs e)
+        {
+
+        }
     }
 }

@@ -38,9 +38,8 @@
             label4 = new Label();
             txtNuevaContrasena = new TextBox();
             label3 = new Label();
-            txtConfirmarContrasena = new TextBox();
-            button1 = new Button();
             btnCancelar = new Button();
+            txtConfirmarContrasena = new TextBox();
             groupBox1.SuspendLayout();
             SuspendLayout();
             // 
@@ -94,6 +93,7 @@
             // 
             // groupBox1
             // 
+            groupBox1.Controls.Add(txtConfirmarContrasena);
             groupBox1.Controls.Add(btnGuardar);
             groupBox1.Controls.Add(label4);
             groupBox1.Controls.Add(txtNuevaContrasena);
@@ -145,24 +145,6 @@
             label3.TabIndex = 0;
             label3.Text = "Nueva Contraseña";
             // 
-            // txtConfirmarContrasena
-            // 
-            txtConfirmarContrasena.Location = new Point(69, 296);
-            txtConfirmarContrasena.Name = "txtConfirmarContrasena";
-            txtConfirmarContrasena.PlaceholderText = "Confirma tu contraseña";
-            txtConfirmarContrasena.Size = new Size(179, 27);
-            txtConfirmarContrasena.TabIndex = 6;
-            txtConfirmarContrasena.TextChanged += txtConfirmarContrasena_TextChanged;
-            // 
-            // button1
-            // 
-            button1.Location = new Point(0, 0);
-            button1.Name = "button1";
-            button1.Size = new Size(94, 29);
-            button1.TabIndex = 7;
-            button1.Text = "button1";
-            button1.UseVisualStyleBackColor = true;
-            // 
             // btnCancelar
             // 
             btnCancelar.DialogResult = DialogResult.Cancel;
@@ -174,14 +156,22 @@
             btnCancelar.UseVisualStyleBackColor = true;
             btnCancelar.Click += button2_Click;
             // 
+            // txtConfirmarContrasena
+            // 
+            txtConfirmarContrasena.Location = new Point(12, 130);
+            txtConfirmarContrasena.Name = "txtConfirmarContrasena";
+            txtConfirmarContrasena.PlaceholderText = "Confirma tu Contraseña";
+            txtConfirmarContrasena.Size = new Size(167, 27);
+            txtConfirmarContrasena.TabIndex = 4;
+            txtConfirmarContrasena.UseSystemPasswordChar = true;
+            txtConfirmarContrasena.TextChanged += txtConfirmarContrasena_TextChanged_1;
+            // 
             // RecuperarPassword
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
             ClientSize = new Size(800, 450);
             Controls.Add(btnCancelar);
-            Controls.Add(button1);
-            Controls.Add(txtConfirmarContrasena);
             Controls.Add(groupBox1);
             Controls.Add(lblMensaje);
             Controls.Add(btnEnviar);
@@ -208,9 +198,8 @@
         private Label label3;
         private TextBox txtNuevaContrasena;
         private Label label4;
-        private TextBox txtConfirmarContrasena;
         private Button btnGuardar;
-        private Button button1;
         private Button btnCancelar;
+        private TextBox txtConfirmarContrasena;
     }
 }
