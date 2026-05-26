@@ -28,118 +28,121 @@
         /// </summary>
         private void InitializeComponent()
         {
-            DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle3 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle4 = new DataGridViewCellStyle();
             label1 = new Label();
             lblTotalPagos = new Label();
             label2 = new Label();
             lblTotalGeneral = new Label();
             label3 = new Label();
             lblTotalClientes = new Label();
-            label4 = new Label();
             label5 = new Label();
             dgvUltimosPagos = new DataGridView();
-            btnAceptar = new Button();
             Fecha = new DataGridViewTextBoxColumn();
             Monto = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
+            btnAceptar = new Button();
             ((System.ComponentModel.ISupportInitialize)dgvUltimosPagos).BeginInit();
             SuspendLayout();
             // 
             // label1
             // 
             label1.AutoSize = true;
+            label1.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label1.ForeColor = Color.Fuchsia;
             label1.Location = new Point(47, 48);
             label1.Name = "label1";
-            label1.Size = new Size(185, 20);
+            label1.Size = new Size(245, 20);
             label1.TabIndex = 0;
             label1.Text = "Total de Pagos Realizados:";
             // 
             // lblTotalPagos
             // 
             lblTotalPagos.AutoSize = true;
-            lblTotalPagos.Location = new Point(232, 49);
+            lblTotalPagos.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalPagos.Location = new Point(342, 48);
             lblTotalPagos.Name = "lblTotalPagos";
-            lblTotalPagos.Size = new Size(17, 20);
+            lblTotalPagos.Size = new Size(19, 20);
             lblTotalPagos.TabIndex = 1;
             lblTotalPagos.Text = "0";
             // 
             // label2
             // 
             label2.AutoSize = true;
+            label2.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label2.ForeColor = Color.Fuchsia;
             label2.Location = new Point(46, 71);
             label2.Name = "label2";
-            label2.Size = new Size(173, 20);
+            label2.Size = new Size(233, 20);
             label2.TabIndex = 2;
             label2.Text = "Total General Monetario:";
             // 
             // lblTotalGeneral
             // 
             lblTotalGeneral.AutoSize = true;
-            lblTotalGeneral.Location = new Point(223, 72);
+            lblTotalGeneral.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalGeneral.Location = new Point(298, 71);
             lblTotalGeneral.Name = "lblTotalGeneral";
-            lblTotalGeneral.Size = new Size(51, 20);
+            lblTotalGeneral.Size = new Size(63, 20);
             lblTotalGeneral.TabIndex = 3;
             lblTotalGeneral.Text = "Q 0.00";
             // 
             // label3
             // 
             label3.AutoSize = true;
+            label3.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label3.ForeColor = Color.Fuchsia;
             label3.Location = new Point(46, 96);
             label3.Name = "label3";
-            label3.Size = new Size(183, 20);
+            label3.Size = new Size(247, 20);
             label3.TabIndex = 4;
             label3.Text = "Total Clientes Registrados:";
             // 
             // lblTotalClientes
             // 
             lblTotalClientes.AutoSize = true;
-            lblTotalClientes.Location = new Point(230, 97);
+            lblTotalClientes.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            lblTotalClientes.ForeColor = Color.Black;
+            lblTotalClientes.Location = new Point(342, 96);
             lblTotalClientes.Name = "lblTotalClientes";
-            lblTotalClientes.Size = new Size(17, 20);
+            lblTotalClientes.Size = new Size(19, 20);
             lblTotalClientes.TabIndex = 5;
             lblTotalClientes.Text = "0";
-            // 
-            // label4
-            // 
-            label4.AutoSize = true;
-            label4.Location = new Point(0, 0);
-            label4.Name = "label4";
-            label4.Size = new Size(50, 20);
-            label4.TabIndex = 6;
-            label4.Text = "label4";
             // 
             // label5
             // 
             label5.AutoSize = true;
-            label5.Location = new Point(62, 148);
+            label5.Font = new Font("Century Schoolbook", 10.8F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            label5.ForeColor = Color.FromArgb(192, 0, 192);
+            label5.Location = new Point(49, 149);
             label5.Name = "label5";
-            label5.Size = new Size(126, 20);
+            label5.Size = new Size(172, 22);
             label5.TabIndex = 7;
             label5.Text = "Últimos 10 Pagos:";
+            label5.Click += label5_Click;
             // 
             // dgvUltimosPagos
             // 
             dgvUltimosPagos.AllowUserToAddRows = false;
             dgvUltimosPagos.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
+            dgvUltimosPagos.BackgroundColor = Color.White;
+            dataGridViewCellStyle3.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle3.BackColor = Color.Fuchsia;
+            dataGridViewCellStyle3.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle3.ForeColor = Color.Black;
+            dataGridViewCellStyle3.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle3.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle3.WrapMode = DataGridViewTriState.True;
+            dgvUltimosPagos.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle3;
             dgvUltimosPagos.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvUltimosPagos.Columns.AddRange(new DataGridViewColumn[] { Fecha, Monto, Descripcion });
-            dgvUltimosPagos.Location = new Point(47, 189);
+            dgvUltimosPagos.Location = new Point(49, 184);
             dgvUltimosPagos.Name = "dgvUltimosPagos";
             dgvUltimosPagos.ReadOnly = true;
             dgvUltimosPagos.RowHeadersWidth = 51;
             dgvUltimosPagos.Size = new Size(713, 121);
             dgvUltimosPagos.TabIndex = 8;
             dgvUltimosPagos.CellContentClick += dataGridView1_CellContentClick;
-            // 
-            // btnAceptar
-            // 
-            btnAceptar.DialogResult = DialogResult.OK;
-            btnAceptar.Location = new Point(670, 387);
-            btnAceptar.Name = "btnAceptar";
-            btnAceptar.Size = new Size(92, 34);
-            btnAceptar.TabIndex = 9;
-            btnAceptar.Text = "Aceptar";
-            btnAceptar.UseVisualStyleBackColor = true;
             // 
             // Fecha
             // 
@@ -152,8 +155,8 @@
             // Monto
             // 
             Monto.DataPropertyName = "Monto";
-            dataGridViewCellStyle1.Format = "N2";
-            Monto.DefaultCellStyle = dataGridViewCellStyle1;
+            dataGridViewCellStyle4.Format = "N2";
+            Monto.DefaultCellStyle = dataGridViewCellStyle4;
             Monto.HeaderText = "Monto";
             Monto.MinimumWidth = 6;
             Monto.Name = "Monto";
@@ -167,15 +170,28 @@
             Descripcion.Name = "Descripcion";
             Descripcion.ReadOnly = true;
             // 
+            // btnAceptar
+            // 
+            btnAceptar.BackColor = Color.Fuchsia;
+            btnAceptar.DialogResult = DialogResult.OK;
+            btnAceptar.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            btnAceptar.ForeColor = Color.White;
+            btnAceptar.Location = new Point(670, 387);
+            btnAceptar.Name = "btnAceptar";
+            btnAceptar.Size = new Size(92, 34);
+            btnAceptar.TabIndex = 9;
+            btnAceptar.Text = "Aceptar";
+            btnAceptar.UseVisualStyleBackColor = false;
+            // 
             // HistorialGeneral
             // 
             AutoScaleDimensions = new SizeF(8F, 20F);
             AutoScaleMode = AutoScaleMode.Font;
+            BackColor = Color.Linen;
             ClientSize = new Size(800, 450);
             Controls.Add(btnAceptar);
             Controls.Add(dgvUltimosPagos);
             Controls.Add(label5);
-            Controls.Add(label4);
             Controls.Add(lblTotalClientes);
             Controls.Add(label3);
             Controls.Add(lblTotalGeneral);
@@ -200,7 +216,6 @@
         private Label lblTotalGeneral;
         private Label label3;
         private Label lblTotalClientes;
-        private Label label4;
         private Label label5;
         private DataGridView dgvUltimosPagos;
         private Button btnAceptar;

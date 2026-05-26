@@ -11,7 +11,7 @@ namespace SistemaPagos.Fronted.Models
         protected override void OnConfiguring(DbContextOptionsBuilder optionsBuilder)
         {
             // Cambia la cadena según tu servidor (LocalDB, SQLEXPRESS, etc.)
-            optionsBuilder.UseSqlServer(@"Server=(localdb)\MSSQLLocalDB;Database=SistemaPagosDB;Trusted_Connection=True;TrustServerCertificate=True;");
+            optionsBuilder.UseSqlServer(@"Server=LAPTOP-LSMCH8TR\SQLEXPRESS;Database=SistemaPagosDB;Trusted_Connection=True;TrustServerCertificate=True;");
         }
     }
 }

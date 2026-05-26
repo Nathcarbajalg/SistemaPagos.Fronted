@@ -30,6 +30,7 @@
         {
             components = new System.ComponentModel.Container();
             DataGridViewCellStyle dataGridViewCellStyle1 = new DataGridViewCellStyle();
+            DataGridViewCellStyle dataGridViewCellStyle2 = new DataGridViewCellStyle();
             label1 = new Label();
             colorDialog1 = new ColorDialog();
             groupBox3 = new GroupBox();
@@ -43,16 +44,16 @@
             lblTiempoRestante = new Label();
             timerSesion = new System.Windows.Forms.Timer(components);
             dgvHistorial = new DataGridView();
-            lblTotalGeneral = new Label();
-            btnTotalPorCliente = new Button();
-            btnHistorialGeneral = new Button();
-            btnCerrarSesion = new Button();
             IdPago = new DataGridViewTextBoxColumn();
             Fecha = new DataGridViewTextBoxColumn();
             Descripcion = new DataGridViewTextBoxColumn();
             Monto = new DataGridViewTextBoxColumn();
             IdentificacionCliente = new DataGridViewTextBoxColumn();
             NombreCliente = new DataGridViewTextBoxColumn();
+            lblTotalGeneral = new Label();
+            btnTotalPorCliente = new Button();
+            btnHistorialGeneral = new Button();
+            btnCerrarSesion = new Button();
             groupBox3.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)dgvHistorial).BeginInit();
             SuspendLayout();
@@ -62,7 +63,7 @@
             label1.AutoSize = true;
             label1.Font = new Font("Gabriola", 24F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             label1.ForeColor = Color.Fuchsia;
-            label1.Location = new Point(422, -15);
+            label1.Location = new Point(467, -4);
             label1.Name = "label1";
             label1.Size = new Size(306, 74);
             label1.TabIndex = 0;
@@ -167,7 +168,7 @@
             lblTiempoRestante.AutoSize = true;
             lblTiempoRestante.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblTiempoRestante.ForeColor = Color.FromArgb(192, 0, 192);
-            lblTiempoRestante.Location = new Point(714, 46);
+            lblTiempoRestante.Location = new Point(889, 90);
             lblTiempoRestante.Name = "lblTiempoRestante";
             lblTiempoRestante.Size = new Size(168, 20);
             lblTiempoRestante.TabIndex = 7;
@@ -183,22 +184,74 @@
             dgvHistorial.AlternatingRowsDefaultCellStyle = dataGridViewCellStyle1;
             dgvHistorial.AutoSizeColumnsMode = DataGridViewAutoSizeColumnsMode.Fill;
             dgvHistorial.BackgroundColor = Color.White;
+            dataGridViewCellStyle2.Alignment = DataGridViewContentAlignment.MiddleLeft;
+            dataGridViewCellStyle2.BackColor = SystemColors.Control;
+            dataGridViewCellStyle2.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
+            dataGridViewCellStyle2.ForeColor = SystemColors.WindowText;
+            dataGridViewCellStyle2.SelectionBackColor = SystemColors.Highlight;
+            dataGridViewCellStyle2.SelectionForeColor = SystemColors.HighlightText;
+            dataGridViewCellStyle2.WrapMode = DataGridViewTriState.True;
+            dgvHistorial.ColumnHeadersDefaultCellStyle = dataGridViewCellStyle2;
             dgvHistorial.ColumnHeadersHeightSizeMode = DataGridViewColumnHeadersHeightSizeMode.AutoSize;
             dgvHistorial.Columns.AddRange(new DataGridViewColumn[] { IdPago, Fecha, Descripcion, Monto, IdentificacionCliente, NombreCliente });
             dgvHistorial.GridColor = Color.Black;
-            dgvHistorial.Location = new Point(473, 77);
+            dgvHistorial.Location = new Point(505, 127);
             dgvHistorial.Name = "dgvHistorial";
             dgvHistorial.RowHeadersWidth = 51;
             dgvHistorial.Size = new Size(633, 188);
             dgvHistorial.TabIndex = 8;
             dgvHistorial.CellContentClick += dgvHistorial_CellContentClick;
             // 
+            // IdPago
+            // 
+            IdPago.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
+            IdPago.DataPropertyName = "IdPago";
+            IdPago.HeaderText = "Id Pago";
+            IdPago.MinimumWidth = 6;
+            IdPago.Name = "IdPago";
+            IdPago.Width = 97;
+            // 
+            // Fecha
+            // 
+            Fecha.DataPropertyName = "Fecha";
+            Fecha.HeaderText = "Fecha";
+            Fecha.MinimumWidth = 6;
+            Fecha.Name = "Fecha";
+            // 
+            // Descripcion
+            // 
+            Descripcion.DataPropertyName = "Descripcion";
+            Descripcion.HeaderText = "Descripción";
+            Descripcion.MinimumWidth = 6;
+            Descripcion.Name = "Descripcion";
+            // 
+            // Monto
+            // 
+            Monto.DataPropertyName = "Monto";
+            Monto.HeaderText = "Monto";
+            Monto.MinimumWidth = 6;
+            Monto.Name = "Monto";
+            // 
+            // IdentificacionCliente
+            // 
+            IdentificacionCliente.DataPropertyName = "IdentificacionCliente";
+            IdentificacionCliente.HeaderText = "No. Identificación (CUI)";
+            IdentificacionCliente.MinimumWidth = 6;
+            IdentificacionCliente.Name = "IdentificacionCliente";
+            // 
+            // NombreCliente
+            // 
+            NombreCliente.DataPropertyName = "NombreCliente";
+            NombreCliente.HeaderText = "Cliente";
+            NombreCliente.MinimumWidth = 6;
+            NombreCliente.Name = "NombreCliente";
+            // 
             // lblTotalGeneral
             // 
             lblTotalGeneral.AutoSize = true;
             lblTotalGeneral.Font = new Font("Century Schoolbook", 10.2F, FontStyle.Bold | FontStyle.Italic, GraphicsUnit.Point, 0);
             lblTotalGeneral.ForeColor = Color.Fuchsia;
-            lblTotalGeneral.Location = new Point(485, 310);
+            lblTotalGeneral.Location = new Point(485, 332);
             lblTotalGeneral.Name = "lblTotalGeneral";
             lblTotalGeneral.Size = new Size(156, 20);
             lblTotalGeneral.TabIndex = 9;
@@ -240,50 +293,6 @@
             btnCerrarSesion.TabIndex = 12;
             btnCerrarSesion.Text = "Cerrar Sesión";
             btnCerrarSesion.UseVisualStyleBackColor = false;
-            // 
-            // IdPago
-            // 
-            IdPago.AutoSizeMode = DataGridViewAutoSizeColumnMode.ColumnHeader;
-            IdPago.DataPropertyName = "IdPago";
-            IdPago.HeaderText = "Id Pago";
-            IdPago.MinimumWidth = 6;
-            IdPago.Name = "IdPago";
-            IdPago.Width = 88;
-            // 
-            // Fecha
-            // 
-            Fecha.DataPropertyName = "Fecha";
-            Fecha.HeaderText = "Fecha";
-            Fecha.MinimumWidth = 6;
-            Fecha.Name = "Fecha";
-            // 
-            // Descripcion
-            // 
-            Descripcion.DataPropertyName = "Descripcion";
-            Descripcion.HeaderText = "Descripción";
-            Descripcion.MinimumWidth = 6;
-            Descripcion.Name = "Descripcion";
-            // 
-            // Monto
-            // 
-            Monto.DataPropertyName = "Monto";
-            Monto.HeaderText = "Monto";
-            Monto.MinimumWidth = 6;
-            Monto.Name = "Monto";
-            // 
-            // IdentificacionCliente
-            // 
-            IdentificacionCliente.DataPropertyName = "IdentificacionCliente";
-            IdentificacionCliente.HeaderText = "No. Identificación (CUI)";
-            IdentificacionCliente.MinimumWidth = 6;
-            IdentificacionCliente.Name = "IdentificacionCliente";
-            // 
-            // NombreCliente
-            // 
-            NombreCliente.DataPropertyName = "NombreCliente";
-            NombreCliente.HeaderText = "Cliente";
-            NombreCliente.MinimumWidth = 6;
-            NombreCliente.Name = "NombreCliente";
             // 
             // PrincipalAdmin
             // 
