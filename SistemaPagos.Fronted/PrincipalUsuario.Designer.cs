@@ -82,7 +82,7 @@
             // btnRealizarPago
             // 
             btnRealizarPago.BackColor = Color.Orange;
-            btnRealizarPago.Location = new Point(238, 108);
+            btnRealizarPago.Location = new Point(237, 108);
             btnRealizarPago.Name = "btnRealizarPago";
             btnRealizarPago.Size = new Size(129, 29);
             btnRealizarPago.TabIndex = 2;
