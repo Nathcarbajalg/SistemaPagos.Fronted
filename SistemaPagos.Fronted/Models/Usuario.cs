@@ -10,23 +10,35 @@ namespace SistemaPagos.Fronted.Models
         [Key]
         public int Id { get; set; }
 
-        [Required, MaxLength(12)]
-        public string Identificacion { get; set; } = "";
+        [Required]
+        [Column("Identificacion")]
+        [StringLength(12, MinimumLength = 12)]
+        public string Identificacion { get; set; } = string.Empty;
 
-        [Required, MaxLength(100)]
-        public string Nombre { get; set; } = "";
+        [Required]
+        [Column("Nombre")]
+        [StringLength(100)]
+        public string Nombre { get; set; } = string.Empty;
 
-        [Required, MaxLength(100)]
-        public string Apellido { get; set; } = "";
+        [Required]
+        [Column("Apellido")]
+        [StringLength(100)]
+        public string Apellido { get; set; } = string.Empty;
 
+        [Required]
+        [Column("FechaNacimiento")]
         public DateTime FechaNacimiento { get; set; }
 
-        [Required, MaxLength(100)]
-        public string Contrasena { get; set; } = "";  // texto plano
+        [Required]
+        [Column("Contrasena")]
+        [StringLength(100)]
+        public string Contrasena { get; set; } = string.Empty;
 
-        [Required, MaxLength(20)]
+        [Column("Rol")]
+        [StringLength(20)]
         public string Rol { get; set; } = "Usuario";
 
+        [Column("FechaRegistro")]
         public DateTime FechaRegistro { get; set; } = DateTime.Now;
     }
 }
